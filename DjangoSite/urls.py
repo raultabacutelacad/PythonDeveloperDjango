@@ -20,3 +20,10 @@ from django.urls import path
 urlpatterns = [
     path('admin/', admin.site.urls),
 ]
+
+from book.biblioteca.views import delete_book
+
+urlpatterns = [
+    path('/delete<int:id>', qq1),
+    path('/delete/confirm/<int:id>', qq2),
+]
