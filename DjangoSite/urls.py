@@ -23,5 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", biblioteca_views.homepage, name="homepage"),
     path('delete/<int:book_id>',biblioteca_views.delete_book),
+    path('add/', biblioteca_views.adauga_carte, name='adauga_carte'),
     path('delete/confirm/<int:book_id>', biblioteca_views.confirm_delete_book, name='delete_book'),
 ]
