@@ -62,7 +62,7 @@ O carte are urmatoarele campuri:
   * Fisierele statice vor fi disponbile la /static/<nume-fisier>
 
 ### Sprint 2
-2. Template pe homepage pentru lista de carti- Emanuela
+2. Template pe homepage pentru lista de carti- Emanuela ✔️
     * Construiti o lista de detalii fake pentru carti si afisati informatiile respective pe pagina radacina (homepage - / - root)
 3. Template pentru adaugarea unei carti. - Dan
    * disponibil la /add/<id>
@@ -93,7 +93,12 @@ O carte are urmatoarele campuri:
      * Yes -> redirect catre /mark-as-read/<id>
    * mark-as-read/<id>
      * Afiseaza un mesaj la consola si face redirect catre homepage
-7. Fisiere statice - Dana
+7. Fisiere statice - Dana ✔️
   * Configurati Django sa poata folosi fisiere statice 
   * Urmati exemplul de configurare din curs. 
   * Fisierele statice vor fi disponbile la /static/<nume-fisier>
+8. Integrarea de fisiere CSS - Emanuela
+   * Adaugarea de fisiere statice CSS pentru templates si css basic pentru a face aplicatia sa arate ok 
+9. Afisarea imaginilor pe homepage - Dana 
+
+10. Pentru rating - Afisarea de stelute in loc de numar - Alex
