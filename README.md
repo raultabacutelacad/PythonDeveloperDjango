@@ -62,7 +62,7 @@ O carte are urmatoarele campuri:
   * Fisierele statice vor fi disponbile la /static/<nume-fisier>
 
 ### Sprint 2
-2. Template pe homepage pentru lista de carti- Alex
+2. Template pe homepage pentru lista de carti- Emanuela
     * Construiti o lista de detalii fake pentru carti si afisati informatiile respective pe pagina radacina (homepage - / - root)
 3. Template pentru adaugarea unei carti. - Dan
    * disponibil la /add/<id>
