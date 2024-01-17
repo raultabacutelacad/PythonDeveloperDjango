@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Rate a book </h2>
+
+ <label for="rating">Rate this book:</label>
+
+<form method="POST">
+        {% csrf_token %}
+
+    <select name="rating" id="id">
+        <option value="1">🙂</option>
+        <option value="2">🙂🙂</option>
+        <option value="3">🙂🙂🙂</option>
+        <option value="4">🙂🙂🙂🙂</option>
+        <option value="5">🙂🙂🙂🙂🙂</option>
+    </select>
+
+    <input type="submit" value="Submit">
+</form>
+
+
+</body>
+</html>
