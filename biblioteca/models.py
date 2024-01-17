@@ -1,11 +1,3 @@
-# O carte are urmatoarele campuri: 
-# * titlu
-# * autor
-# * descriere
-# * citit - Boolean 
-# * rating - (0-5)
-# * imagini adaugate pentru o carte (extensie)
-
 from django.db import models
 
 class Carte(models.Model):

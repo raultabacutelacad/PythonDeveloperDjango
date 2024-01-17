@@ -16,12 +16,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
 from biblioteca import views as biblioteca_views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", biblioteca_views.homepage, name="homepage"),
     path('delete/<int:book_id>',biblioteca_views.delete_book),
     path('delete/confirm/<int:book_id>', biblioteca_views.confirm_delete_book, name='delete_book'),
+    path('rate/<int:id>/', biblioteca_views.rate)
 ]

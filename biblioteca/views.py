@@ -20,5 +20,10 @@ def confirm_delete_book(request, book_id):
     book = get_object_or_404(Carte, pk=book_id)
     return render(request, 'delete_book.html', {'book': book})
 
+def rate(request, id):
+    if request.method == "POST":
+        print(request.POST)
+    return render(request, "rating.html")
+
 
 
