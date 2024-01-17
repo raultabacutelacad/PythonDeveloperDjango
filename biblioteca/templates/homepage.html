@@ -1,0 +1,28 @@
+<!-- 2. Template pe homepage pentru lista de carte
+    * Construiti o lista de detalii fake pentru carti si afisati informatiile respective pe pagina radacina (homepage - / - root) -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biblioteca</title>
+</head>
+
+<body>
+    <h1>Lista de carti</h1>
+    <ul>
+        {% for carte in carti %}
+            <li>
+                <strong>{{ carte.titlu }}</strong> de {{ carte.autor }}<br>
+                Descriere: {{ carte.descriere }}<br>
+                Citit: {% if carte.citit %}Da{% else %}Nu{% endif %}<br>
+                Rating: {{ carte.rating }}<br>
+                <img src="{{ carte.imagine.url }}" alt="{{ carte.titlu }} imagine" width="100"><br>
+                <br>
+                <a href="{% url 'delete_book' carte.pk %}">Sterge</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <!-- <a href="{% url 'add' %}">Adauga carte</a> -->
+</body>
+</html>
