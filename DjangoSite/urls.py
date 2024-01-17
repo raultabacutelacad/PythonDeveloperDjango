@@ -17,13 +17,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from biblioteca import views as biblioteca_views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-]
-
-from book.biblioteca.views import delete_book
-
-urlpatterns = [
-    path('/delete<int:id>', qq1),
-    path('/delete/confirm/<int:id>', qq2),
+    path("/", biblioteca_views.homepage, name="homepage"),
+    path('delete/<int:book_id>',biblioteca_views.delete_book),
+    path('delete/confirm/<int:book_id>', biblioteca_views.confirm_delete_book, name='delete_book'),
 ]
