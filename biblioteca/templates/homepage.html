@@ -1,25 +1,46 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Biblioteca</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    {% load static %}
+
     <h1>Lista de carti</h1>
     <ul>
-        {% for carte in carti %}
-            <li>
-                <strong>{{ carte.titlu }}</strong> de {{ carte.autor }}<br>
-                Descriere: {{ carte.descriere }}<br>
-                Citit: {% if carte.citit %}Da{% else %}Nu{% endif %}<br>
-                Rating: {{ carte.rating }}<br>
-                <img src="{{ carte.imagine.url }}" alt="{{ carte.titlu }} imagine" width="100"><br>
-                <br>
-                <a href="{% url 'delete_book' carte.pk %}">Sterge</a>
-            </li>
-        {% endfor %}
+      {% for carte in carti %}
+      <li>
+        <strong>{{ carte.titlu }}</strong> de {{ carte.autor }}<br />
+        Descriere: {{ carte.descriere }}<br />
+        Citit: {% if carte.citit %}Da{% else %}Nu{% endif %}<br />
+        {% if not carte.citit %}
+        <a href="{% url 'confirm_marcheaza_citit' carte.pk %}"
+          >Marcheaza ca citit</a
+        >
+        {% endif %}
+        <br />
+
+        Rating: {% if carte.rating == 1 %} ⭐ {%elif carte.rating == 2 %} ⭐⭐
+        {%elif carte.rating == 3 %} ⭐⭐⭐ {%elif carte.rating == 4 %} ⭐⭐⭐⭐
+        {%elif carte.rating == 5 %} ⭐⭐⭐⭐⭐ {%endif%}
+
+        <br />
+        {{ carte.filename }}
+        <img
+          src="{% static carte.filename %}"
+          alt="{{ carte.titlu }} imagine"
+          width="100"
+        /><br />
+        <br />
+        <a href="{% url 'rating_carte' carte.pk %}">Adauga Rating</a>
+        <br />
+        <a href="{% url 'confirm_delete_book' carte.pk %}">Sterge</a>
+      </li>
+      {% endfor %}
     </ul>
-</body>
+
+    <a href="{% url 'adauga_carte' %}">Adauga carte noua</a>
+  </body>
 </html>

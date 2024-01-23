@@ -22,6 +22,10 @@ from biblioteca import views as biblioteca_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", biblioteca_views.homepage, name="homepage"),
-    path('delete/<int:book_id>',biblioteca_views.delete_book),
-    path('delete/confirm/<int:book_id>', biblioteca_views.confirm_delete_book, name='delete_book'),
+    path('delete/<int:book_id>',biblioteca_views.confirm_delete_book, name='confirm_delete_book'),
+    path('delete/confirm/<int:book_id>', biblioteca_views.delete_book, name='delete_book'),
+    path('add', biblioteca_views.adauga_carte, name='adauga_carte'),
+    path('rate/<int:id_carte>', biblioteca_views.rating_carte, name='rating_carte'),
+    path('read/<int:id_carte>', biblioteca_views.confirm_marcheaza_ca_citit, name='confirm_marcheaza_citit'),
+    path('mark-as-read/<int:id_carte>', biblioteca_views.marcheaza_ca_citit, name='confirm_mark_as_read')
 ]

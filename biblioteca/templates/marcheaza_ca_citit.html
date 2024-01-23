@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marcheaza Carte</title>
+  </head>
+  <body>
+    <h2>Ai citit cartea {{carte.titlu}} ?</h2>
+
+    <a href="{% url 'confirm_mark_as_read' carte.pk %}"><button>Da</button></a>
+    <a href="{% url 'homepage' %}"><button>Nu</button></a>
+  </body>
+</html>
